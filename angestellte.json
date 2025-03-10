@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Max Mustermann",
+    "rolle": "Koch",
+    "gehalt": 2500
+  },
+  {
+    "id": 2,
+    "name": "Erika Musterfrau",
+    "rolle": "Chefin",
+    "gehalt": 2000
+  },
+  {
+    "id": 3,
+    "name": "Hans Meier",
+    "rolle": "Manager",
+    "gehalt": 3000
+  }
+]

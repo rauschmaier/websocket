@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Angestellte (WebSocket)</title>
+</head>
+<body>
+    <h1>Liste der Angestellten</h1>
+    <ul id="angestellte"></ul>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:3001');
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            let list = document.getElementById('angestellte');
+            list.innerHTML = '';
+            data.forEach(person => {
+                let li = document.createElement('li');
+                li.textContent = `${person.name} - ${person.rolle} - ${person.gehalt}€`;
+                list.appendChild(li);
+            });
+        };
+
+        ws.onopen = () => console.log('WebSocket verbunden');
+        ws.onclose = () => console.log('WebSocket getrennt');
+    </script>
+</body>
+</html>
